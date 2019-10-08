@@ -18,8 +18,15 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.weatherSvc.getWeather(this.city, this.api_key)
-      .then(resutl => {
-        console.log(resutl);
+      .then(result => {
+        console.log(result);
+        this.model = new Weather(
+          result.name,
+          result.main.temp,
+          result.main.pressure,
+          result.main.humidity,
+          result.wind.speed,
+          result.wind.deg);
       })
       .catch(error => {
         console.log(error);
