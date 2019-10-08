@@ -9,6 +9,8 @@ import { Weather } from './models/weather';
 })
 export class AppComponent implements OnInit {
   title = 'weather-app';
+
+  //Temporary for testing
   api_key = "476e23fe1116f4e69d2a3e68672604e1";
   city = "Singapore";
   model = new Weather(this.city, 0, 0, 0, 0, 0);
